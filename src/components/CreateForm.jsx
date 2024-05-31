@@ -1,29 +1,29 @@
-import {Input} from "./Input.jsx";
-import {useState} from "react";
+import { Input } from './Input.jsx'
+import { useState } from 'react'
 
 export const CreateForm = (props) => {
   const [movie, setMovie] = useState({
-    title: "",
-    genre: "",
-    time: "",
-  });
+    title: '',
+    genre: '',
+    time: '',
+  })
   
   return (
     <form
       className="flex flex-col gap-4"
       onSubmit={(e) => {
-        e.preventDefault();
+        e.preventDefault()
         
         props.onStoreMovie({
           title: movie.title,
           genre: movie.genre,
-          time: movie.time
+          time: movie.time,
         })
         
         setMovie({
-          title: "",
-          genre: "",
-          time: ""
+          title: '',
+          genre: '',
+          time: '',
         })
       }}
     >
@@ -31,7 +31,7 @@ export const CreateForm = (props) => {
         label="Judul Film"
         value={movie.title}
         onChange={(e) => setMovie(
-          {...movie, title: e.target.value}
+          { ...movie, title: e.target.value },
         )}
       />
       
@@ -39,7 +39,7 @@ export const CreateForm = (props) => {
         label="Genre"
         value={movie.genre}
         onChange={(e) => setMovie(
-          {...movie, genre: e.target.value}
+          { ...movie, genre: e.target.value },
         )}
       />
       
@@ -48,14 +48,14 @@ export const CreateForm = (props) => {
         value={movie.time}
         type="datetime-local"
         onChange={(e) => setMovie(
-          {...movie, time: e.target.value}
+          { ...movie, time: e.target.value },
         )}
       />
       
       <button
         type="submit"
         disabled={!movie.title || !movie.genre || !movie.time}
-        className="h-12 bg-indigo-500 rounded-lg text-indigo-50 font-semibold hover:bg-indigo-600"
+        className="h-12 bg-indigo-500 text-indigo-50 font-semibold hover:bg-indigo-600"
       >
         Tambah
       </button>
