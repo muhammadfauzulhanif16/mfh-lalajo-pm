@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Outfit, sans-serif';
+  src: url(./fonts/Outfit/static/Outfit-Regular.ttf); /* IE9 Compat Modes */
+}
+
+* {
+  margin: 0;
+  font-family: 'Outfit, sans-serif';
+}
